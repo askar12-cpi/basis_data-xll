@@ -53,7 +53,10 @@ Jabatan ENUM('Manager', 'Supervisor', 'Staff'),
 
 Hasil:
 
-![](desc.png)
+
+![](gambar/desc.png)
+
+
 
 ## 2. Gunakan perintah SELECT * FROM pegawai; untuk mendapatkan data.
 Struktur:
@@ -108,4 +111,7 @@ INSERT INTO pegawai (NIP, NDep, NBlk, JK, Alamat, Telp, Jabatan, Gaji, NoCab) VA
 
 Hasil :
 
-![](select.png)
+
+![](gambar/select.png)
+
+
