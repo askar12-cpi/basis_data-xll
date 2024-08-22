@@ -117,36 +117,36 @@ Hasil :
 
 
 
-# COUNT
+## 1
 *penjelasan:* Perintah COUNT dalam MySQL digunakan untuk menghitung jumlah baris dalam suatu tabel yang memenuhi kriteria tertentu. Ini adalah fungsi agregat yang sangat umum digunakan dalam query SQL untuk memperoleh informasi statistik tentang data dalam tabel.
 
-*Contoh:* 
+Contoh:
 ~~~sql
 SELECT COUNT(NIP) AS jumlahpegawai, COUNT(Jabatan) AS jumlahJabatan FROM pegawai;
 ~~~
 
 
 
-*Hasil:*
+Hasil:
 
 ![](gambar/1.png)
 
 
 
-*Analisis:*
-- SELECT = untuk memilih kolom apa saja yang ingin dipilih (untuk dihitung).
-- COUNT(NIP) = untuk menghitung jumlah barisan data yang mempunyai isi data dari kolom yang dipilih. NIP adalah nama kolom yang dipilih untuk dihitung.
-- AS = untuk mengubah nama dari suatu kolom untuk sementara.
-- jumlahpegawai = merupakan nama ubahan dari perintah AS yang digunakan. merupakan nama sementara dari perintah COUNT(NIP).
-- COUNT(Jabatan) = untuk menghitung jumlah barisan data yang mempunyai isi data dari kolom yang dipilih. Jabatan adalah nama kolom yang dipilih untuk menghitung.
-- AS = untuk mengubah nama dari suatu kolom untuk sementara
-- jumlahjabatan =  merupakan nama ubahan dari perintah AS yang digunakan. merupakan nama sementara dari perintah COUNT(NIP).
-- FROM pegawai = merupakan dari tabel mana datanya yang digunakan, pegawai adalah nama tabel yang datanya ingin digunakan.
+Analisis:
+- `SELECT` = untuk memilih kolom apa saja yang ingin dipilih (untuk dihitung).
+- `COUNT(NIP)` = untuk menghitung jumlah barisan data yang mempunyai isi data dari kolom yang dipilih. NIP adalah nama kolom yang dipilih untuk dihitung.
+- `AS` = untuk mengubah nama dari suatu kolom untuk sementara.
+- `jumlahpegawai` = merupakan nama ubahan dari perintah AS yang digunakan. merupakan nama sementara dari perintah COUNT(NIP).
+- `COUNT(Jabatan)` = untuk menghitung jumlah barisan data yang mempunyai isi data dari kolom yang dipilih. Jabatan adalah nama kolom yang dipilih untuk menghitung.
+- `AS` = untuk mengubah nama dari suatu kolom untuk sementara
+- `jumlahjabatan` =  merupakan nama ubahan dari perintah AS yang digunakan. merupakan nama sementara dari perintah COUNT(NIP).
+- `FROM pegawai` = merupakan dari tabel mana datanya yang digunakan, pegawai adalah nama tabel yang datanya ingin digunakan.
 
 ## 2.
-*penjelasan:* Queri SQL yang Anda berikan akan menghitung jumlah karyawan ( NIP) dalam pegawai`tabel yang termasuk dalam cabang atau departemen tertentu yang diidentifikasi oleh `NoCab = 'C102'.
+penjelasan: Queri SQL yang Anda berikan akan menghitung jumlah karyawan ( NIP) dalam pegawai`tabel yang termasuk dalam cabang atau departemen tertentu yang diidentifikasi oleh `NoCab = 'C102'.
 
-*contoh:* 
+contoh:
 ~~~sql
 SELECT COUNT(NIP) AS jumlahpegawai
 -> FROM pegawai
@@ -154,26 +154,28 @@ SELECT COUNT(NIP) AS jumlahpegawai
 ~~~
 
 
-*hasil:*
+hasil:
+
 
 ![](gambar/2.png)
 
 
 
-*analisis:*
-- SELECT= untuk memilih kolom mana saja yang di ingin dipilih untuk dihitung.
-- COUNT(NIP)= untuk menghitung jumlah basis data yang mempunyai data dari kolom yang dipilih, NIP adalah nama kolom yang dipilih untuk dihitung.
-- AS= untuk mengubah nama dari suatu kolom untuk sementara.
-- jumlahpegawai= nama sementara yang dipilih untuk colom COUNT(NIP).
-- FROM pegawai= dari tabel mana datanya akan digunakan, pegawai adalah nama tabel yang dipilih untuk digunakan.
-- WHERE= merupakan kondisi yang harus dipenuhi agar datanya dapat dihitung dengan query COUNT(NIP).
-- (NoCab = C102;) = adalah kondisi dari WHERE yang harus dipenuhi, jadi hanya barisan data yang memiliki C102 dikolom NoCab yang bisa dihitung.
+analisis:
+
+- `SELECT`= untuk memilih kolom mana saja yang di ingin dipilih untuk dihitung.
+- `COUNT(NIP)`= untuk menghitung jumlah basis data yang mempunyai data dari kolom yang dipilih, NIP adalah nama kolom yang dipilih untuk dihitung.
+- `AS`= untuk mengubah nama dari suatu kolom untuk sementara.
+- `jumlahpegawai`= nama sementara yang dipilih untuk colom COUNT(NIP).
+- `FROM pegawai`= dari tabel mana datanya akan digunakan, pegawai adalah nama tabel yang dipilih untuk digunakan.
+- `WHERE`= merupakan kondisi yang harus dipenuhi agar datanya dapat dihitung dengan query COUNT(NIP).
+- `(NoCab = C102;)` = adalah kondisi dari WHERE yang harus dipenuhi, jadi hanya barisan data yang memiliki C102 dikolom NoCab yang bisa dihitung.
 
 
 ## 3.
-*penjelasan:* SELECT NoCab, COUNT(NIP) AS jumlah_pegawai:
+penjelasan: SELECT NoCab, COUNT(NIP) AS jumlah_pegawai:
 
-*contoh:*
+contoh:
 ~~~sql
 SELECT NoCab,COUNT(NIP) AS jumlah_pegawai
     -> FROM pegawai
@@ -181,19 +183,19 @@ SELECT NoCab,COUNT(NIP) AS jumlah_pegawai
 ~~~
 
 
-*hasil:*
+hasil:
 
 ![](gambar/3.png)
 
 
 
-*analisis:*
-- SELECT= untuk memilih kolom mana saja yang ingin dihitung atau ditampilkan.
-- NoCab= merupakan nama kolom yang ingin ditampilkan.
-- COUNT(NIP)= untuk menghitung jumlah barisan data yang mempunyai isi data dari kolom yang dipilih, NIP adalah nama kolom yang dipilih unutk dihitung
-- AS= untuk mengubah nama dari suatu kolom untuk sementara.
-- jumlah_pagawai= merupakan nama sementara dari kolom hasil COUNT(NIP).
-- FROM pegawai= dari tabel mana yang data kolomnya ingin digunakan.
+analisis:
+- `SELECT`= untuk memilih kolom mana saja yang ingin dihitung atau ditampilkan.
+- `NoCab`= merupakan nama kolom yang ingin ditampilkan.
+- `COUNT(NIP)`= untuk menghitung jumlah barisan data yang mempunyai isi data dari kolom yang dipilih, NIP adalah nama kolom yang dipilih unutk dihitung
+- `AS`= untuk mengubah nama dari suatu kolom untuk sementara.
+- `jumlah_pagawai`= merupakan nama sementara dari kolom hasil COUNT(NIP).
+- `FROM pegawai`= dari tabel mana yang data kolomnya ingin digunakan.
 - GROUP BY= untuk mengelompokkan data berdasarkan nilai data yang telah ditentukan pada kolom yang dipilih.
 - NoCab= nama kolom yang dipilih untuk datanya dikelompokkan.
  
