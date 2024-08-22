@@ -13,8 +13,7 @@ Jabatan ENUM('Manager', 'Supervisor', 'Staff'),
     NoCab VARCHAR(255) NOT NULL
 );
 ~~~
-
-### Penjelasan:
+ Penjelasan:
 - NIP INT PRIMARY KEY:
     - NIP: Kolom ini menyimpan Nomor Induk Pegawai yang bertipe data integer (INT).
     - PRIMARY KEY: Menandakan bahwa kolom NIP adalah kunci utama dari tabel ini. Kunci utama harus memiliki nilai yang unik untuk setiap baris dan tidak boleh NULL.
@@ -72,8 +71,7 @@ INSERT INTO pegawai (NIP, NDep, NBlk, JK, Alamat, Telp, Jabatan, Gaji, NoCab) VA
 -> (10415, 'Susan', 'Sumantri', 'P', 'JL. Pahlawan 24 Surabaya', '031-555120', '', 2650000, 'C104'), 
 -> (10407, 'Rio', 'Gunawan', 'L', 'JL. Melati 356 Surabaya', '031-555231', 'Staff', 1725000, 'C104')~~;
 ~~~
-
-### Penjelasan:
+Penjelasan:
 - INSERT INTO pegawai:
     - Menunjukkan bahwa Anda akan menambahkan data ke tabel bernama pegawai.
     
@@ -165,9 +163,9 @@ SELECT COUNT(NIP) AS jumlahpegawai
 - `COUNT(NIP)`= untuk menghitung jumlah basis data yang mempunyai data dari kolom yang dipilih, NIP adalah nama kolom yang dipilih untuk dihitung.
 - `AS`= untuk mengubah nama dari suatu kolom untuk sementara.
 - `jumlahpegawai`= nama sementara yang dipilih untuk colom COUNT(NIP).
-- `FROM pegawa`i= dari tabel mana datanya akan digunakan, pegawai adalah nama tabel yang dipilih untuk digunakan.
-- WHERE= merupakan kondisi yang harus dipenuhi agar datanya dapat dihitung dengan query COUNT(NIP).
-- (NoCab = C102;) = adalah kondisi dari WHERE yang harus dipenuhi, jadi hanya barisan data yang memiliki C102 dikolom NoCab yang bisa dihitung.
+- `FROM pegawai`= dari tabel mana datanya akan digunakan, pegawai adalah nama tabel yang dipilih untuk digunakan.
+- `WHERE`= merupakan kondisi yang harus dipenuhi agar datanya dapat dihitung dengan query COUNT(NIP).
+- `(NoCab = C102;)` = adalah kondisi dari WHERE yang harus dipenuhi, jadi hanya barisan data yang memiliki C102 dikolom NoCab yang bisa dihitung.
 
 
 ## 3.
@@ -247,12 +245,10 @@ SELECT SUM(Gaji) AS Total_Gaji
 
 
 PENJELASAN : 
-- SELECT SUM(Gaji) AS Total_Gaji:
-    - SUM(Gaji): Menghitung jumlah total dari semua nilai dalam kolom Gaji. Fungsi agregat SUM() menjumlahkan nilai-nilai dalam kolom tersebut.
-    - AS Total_Gaji: Memberikan alias Total_Gaji pada hasil hitungan ini. Alias ini akan digunakan sebagai nama kolom dalam hasil query.
-    
-- FROM pegawai:
-    - Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
+`SELECT SUM(Gaji) AS Total_Gaji`:
+ `SUM(Gaji)`: Menghitung jumlah total dari semua nilai dalam kolom Gaji. Fungsi agregat SUM() menjumlahkan nilai-nilai dalam kolom tersebut.
+ `AS Total_Gaji`: Memberikan alias Total_Gaji pada hasil hitungan ini. Alias ini akan digunakan sebagai nama kolom dalam hasil query.
+ `FROM pegawai`:Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
 
 ## 6.
 **GAMBAR : 
@@ -270,15 +266,13 @@ SELECT SUM(Gaji) AS Gaji_Manager
 
 
 PENJELASAN : 
-- SELECT SUM(Gaji) AS Gaji_Manager:
-    - SUM(Gaji): Menghitung jumlah total dari nilai-nilai dalam kolom Gaji. Fungsi agregat SUM() digunakan untuk menjumlahkan semua nilai gaji yang memenuhi kondisi tertentu.
-    - AS Gaji_Manager: Memberikan alias Gaji_Manager pada hasil hitungan ini. Alias ini akan digunakan sebagai nama kolom dalam hasil query, memberikan deskripsi yang jelas bahwa nilai tersebut adalah total gaji untuk jabatan 'Manager'.
-    
-- FROM pegawai:
-    - Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
-    
-- WHERE Jabatan = 'Manager':
-    - Menetapkan kondisi filter untuk query. Hanya baris yang memiliki nilai Jabatan sama dengan 'Manager' yang akan dihitung. Dengan kata lain, hanya pegawai dengan jabatan 'Manager' yang akan dihitung total gajinya.
+`SELECT SUM(Gaji) AS Gaji_Manager`:
+`SUM(Gaji)`: Menghitung jumlah total dari nilai-nilai dalam kolom Gaji. Fungsi agregat SUM() digunakan untuk menjumlahkan semua nilai gaji yang memenuhi kondisi tertentu.
+`AS Gaji_Manager`: Memberikan alias Gaji_Manager pada hasil hitungan ini. Alias ini akan digunakan sebagai nama kolom dalam hasil query, memberikan deskripsi yang jelas bahwa nilai tersebut adalah total gaji untuk jabatan 'Manager'.
+`FROM pegawai`:
+Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
+`WHERE Jabatan = 'Manager'`:
+Menetapkan kondisi filter untuk query. Hanya baris yang memiliki nilai Jabatan sama dengan 'Manager' yang akan dihitung. Dengan kata lain, hanya pegawai dengan jabatan 'Manager' yang akan dihitung total gajinya.
 
 ## 7.
 **GAMBAR : 
@@ -296,16 +290,12 @@ SELECT NoCab, SUM(Gaji) AS TotalGaji
 
 
 PENJELASAN : 
-- SELECT NoCab, SUM(Gaji) AS TotalGaji:
-    - NoCab: Memilih kolom NoCab, yang biasanya menunjukkan kode cabang tempat pegawai bekerja.
-    - SUM(Gaji): Menghitung jumlah total dari nilai-nilai dalam kolom Gaji. Fungsi agregat SUM() digunakan untuk menjumlahkan gaji dari semua pegawai dalam setiap cabang.
-    - AS TotalGaji: Memberikan alias TotalGaji pada hasil hitungan ini, yang akan digunakan sebagai nama kolom dalam hasil query.
-
-- FROM pegawai:
-    - Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
-
-- GROUP BY NoCab:
-    - Mengelompokkan hasil berdasarkan nilai dalam kolom NoCab. Ini memastikan bahwa perhitungan SUM(Gaji) dilakukan secara terpisah untuk setiap nilai unik di kolom NoCab, yaitu setiap cabang.
+`SELECT NoCab, SUM(Gaji) AS TotalGaji`:
+`NoCab`: Memilih kolom NoCab, yang biasanya menunjukkan kode cabang tempat pegawai bekerja.
+`SUM(Gaji)`: Menghitung jumlah total dari nilai-nilai dalam kolom Gaji. Fungsi agregat SUM() digunakan untuk menjumlahkan gaji dari semua pegawai dalam setiap cabang.
+`AS TotalGaji`: Memberikan alias TotalGaji pada hasil hitungan ini, yang akan digunakan sebagai nama kolom dalam hasil query.
+`FROM pegawai`:Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
+`GROUP BY NoCab`: Mengelompokkan hasil berdasarkan nilai dalam kolom NoCab. Ini memastikan bahwa perhitungan SUM(Gaji) dilakukan secara terpisah untuk setiap nilai unik di kolom NoCab, yaitu setiap cabang.
 
 ## 8.
 **GAMBAR : 
@@ -323,20 +313,15 @@ SELECT NoCab, SUM(Gaji) AS Total_Gaji
 
 
 PENJELASAN : 
-- SELECT NoCab, SUM(Gaji) AS Total_Gaji:
-    - NoCab: Memilih kolom NoCab, yang biasanya menunjukkan kode cabang tempat pegawai bekerja.
-    - SUM(Gaji): Menghitung jumlah total dari nilai-nilai dalam kolom Gaji. Fungsi agregat SUM() digunakan untuk menjumlahkan gaji dari semua pegawai dalam setiap cabang.
-    - AS Total_Gaji: Memberikan alias Total_Gaji pada hasil hitungan ini, yang akan digunakan sebagai nama kolom dalam hasil query.
-
-- FROM pegawai:
-    - Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
-
-- GROUP BY NoCab:
-    - Mengelompokkan hasil berdasarkan nilai dalam kolom NoCab. Ini memastikan bahwa perhitungan SUM(Gaji) dilakukan secara terpisah untuk setiap cabang.
-
-- HAVING SUM(Gaji) >= 8000000:
-    - HAVING: Digunakan untuk menetapkan kondisi pada kelompok data setelah pengelompokan dilakukan. Ini berbeda dari WHERE yang berlaku sebelum pengelompokan.
-    - SUM(Gaji) >= 8000000: Menyaring hasil agar hanya cabang-cabang yang memiliki total gaji 8.000.000 atau lebih yang ditampilkan.
+`SELECT NoCab, SUM(Gaji) AS Total_Gaji`:
+`NoCab: Memilih kolom NoCab,`: yang biasanya menunjukkan kode cabang tempat pegawai bekerja.
+`SUM(Gaji)`: Menghitung jumlah total dari nilai-nilai dalam kolom Gaji. Fungsi agregat SUM() digunakan untuk menjumlahkan gaji dari semua pegawai dalam setiap cabang.
+ `AS Total_Gaji`: Memberikan alias Total_Gaji pada hasil hitungan ini, yang akan digunakan sebagai nama kolom dalam hasil query.
+`FROM pegawai`:Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
+`GROUP BY NoCab`:Mengelompokkan hasil berdasarkan nilai dalam kolom NoCab. Ini memastikan bahwa perhitungan SUM(Gaji) dilakukan secara terpisah untuk setiap cabang.
+`HAVING SUM(Gaji) >= 8000000`:
+`HAVING`: Digunakan untuk menetapkan kondisi pada kelompok data setelah pengelompokan dilakukan. Ini berbeda dari WHERE yang berlaku sebelum pengelompokan.
+`SUM(Gaji) >= 8000000`: Menyaring hasil agar hanya cabang-cabang yang memiliki total gaji 8.000.000 atau lebih yang ditampilkan.
 
 ## 9.
 **GAMBAR : 
@@ -353,12 +338,10 @@ SELECT AVG(Gaji) AS Rata_rata
 
 
 PENJELASAN : 
-- SELECT AVG(Gaji) AS Rata_rata:
-    - AVG(Gaji): Menghitung rata-rata dari nilai-nilai dalam kolom Gaji. Fungsi agregat AVG() digunakan untuk menghitung nilai rata-rata dari kolom tersebut.
-    - AS Rata_rata: Memberikan alias Rata_rata pada hasil perhitungan ini. Alias ini akan digunakan sebagai nama kolom dalam hasil query, memberikan deskripsi yang jelas bahwa nilai tersebut adalah rata-rata gaji.
-    
-- FROM pegawai:
-    - Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
+SELECT AVG(Gaji) AS Rata_rata:
+`AVG(Gaji)`: Menghitung rata-rata dari nilai-nilai dalam kolom Gaji. Fungsi agregat AVG() digunakan untuk menghitung nilai rata-rata dari kolom tersebut.
+`AS Rata_rata`: Memberikan alias Rata_rata pada hasil perhitungan ini. Alias ini akan digunakan sebagai nama kolom dalam hasil query, memberikan deskripsi yang jelas bahwa nilai tersebut adalah rata-rata gaji.
+`FROM pegawai`:Menunjukkan bahwa data yang akan diambil berasal dari tabel pegawai.
 ## 10.
 **GAMBAR : 
 
