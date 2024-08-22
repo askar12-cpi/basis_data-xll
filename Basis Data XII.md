@@ -1,4 +1,9 @@
 ## 1. Gunakan perintah DESC pegawai; untuk mendapatkan struktur tabel.
+program:
+~~~sql
+desc pegawai;
+~~~
+
 Struktur:
 ~~~ SQL
  CREATE TABLE pegawai (
@@ -59,6 +64,10 @@ Hasil:
 
 
 ## 2. Gunakan perintah SELECT * FROM pegawai; untuk mendapatkan data.
+program: 
+~~~sql
+select * from pegawai;
+~~~
 Struktur:
 ~~~ SQL
 INSERT INTO pegawai (NIP, NDep, NBlk, JK, Alamat, Telp, Jabatan, Gaji, NoCab) VALUES 
@@ -74,36 +83,40 @@ INSERT INTO pegawai (NIP, NDep, NBlk, JK, Alamat, Telp, Jabatan, Gaji, NoCab) VA
 ~~~
 
 ### Penjelasan:
-- INSERT INTO pegawai: Menunjukkan bahwa Anda akan menambahkan data ke tabel bernama pegawai.
+- INSERT INTO pegawai:
+    - Menunjukkan bahwa Anda akan menambahkan data ke tabel bernama pegawai.
+    
 - (NIP, NDep, NBlk, JK, Alamat, Telp, Jabatan, Gaji, NoCab):
-- Ini adalah daftar kolom dalam tabel pegawai yang akan diisi dengan data. Kolom-kolom ini adalah:
-- NIP (Nomor Induk Pegawai)
-- NDep (Nama Depan)
-- NBlk (Nama Belakang)
-- JK (Jenis Kelamin)
-- Alamat (Alamat)
-- Telp (Telepon)
-- Jabatan (Jabatan)
-- Gaji (Gaji)
-- NoCab (Nomor Cabang)
-
-- VALUES: Menunjukkan data yang akan dimasukkan ke dalam tabel. Data untuk setiap baris harus sesuai dengan urutan kolom yang disebutkan sebelumnya.
+    - Ini adalah daftar kolom dalam tabel pegawai yang akan diisi dengan data. Kolom-kolom ini adalah:
+        - NIP (Nomor Induk Pegawai)
+        - NDep (Nama Depan)
+        - NBlk (Nama Belakang)
+        - JK (Jenis Kelamin)
+        - Alamat (Alamat)
+        - Telp (Telepon)
+        - Jabatan (Jabatan)
+        - Gaji (Gaji)
+        - NoCab (Nomor Cabang)
+        
+- VALUES:
+    - Menunjukkan data yang akan dimasukkan ke dalam tabel. Data untuk setiap baris harus sesuai dengan urutan kolom yang disebutkan sebelumnya.
+    
 - Data yang Dimasukkan:
-- Baris pertama:
-- NIP: 10107
-- NDep: 'Emya'
-- NBlk: 'Salsalina'
-- JK: 'P' (Perempuan)
-- Alamat: 'JL. Suci 78 Bandung'
-- Telp: '022-555768'
-- Jabatan: 'Manager'
-- Gaji: 5250000
-- NoCab: 'C101'
-- Baris kedua dan seterusnya mengikuti pola yang sama, dengan data yang berbeda.
-
+    - Baris pertama:
+        - NIP: 10107
+        - NDep: 'Emya'
+        - NBlk: 'Salsalina'
+        - JK: 'P' (Perempuan)
+        - Alamat: 'JL. Suci 78 Bandung'
+        - Telp: '022-555768'
+        - Jabatan: 'Manager'
+        - Gaji: 5250000
+        - NoCab: 'C101'
+    - Baris kedua dan seterusnya mengikuti pola yang sama, dengan data yang berbeda.
+    
 - Catatan:
-- Pada baris 10415 untuk Susan Sumantri, kolom Jabatan tidak diisi (''), yang bisa menyebabkan masalah jika kolom Jabatan adalah ENUM dan tidak termasuk nilai kosong. Pastikan kolom Jabatan memiliki nilai yang valid.
-- Jika ada nilai kosong ('') dalam kolom Jabatan, Anda mungkin ingin memperbarui baris ini dengan jabatan yang sesuai, seperti 'Staff', atau menyesuaikan schema tabel untuk mengizinkan nilai kosong jika perlu.
+    - Pada baris 10415 untuk Susan Sumantri, kolom Jabatan tidak diisi (''), yang bisa menyebabkan masalah jika kolom Jabatan adalah ENUM dan tidak termasuk nilai kosong. Pastikan kolom Jabatan memiliki nilai yang valid.
+    - Jika ada nilai kosong ('') dalam kolom Jabatan, Anda mungkin ingin memperbarui baris ini dengan jabatan yang sesuai, seperti 'Staff', atau menyesuaikan schema tabel untuk mengizinkan nilai kosong jika perlu.
 
 Hasil :
 
@@ -124,6 +137,7 @@ SELECT COUNT(NIP) AS jumlahpegawai, COUNT(Jabatan) AS jumlahJabatan FROM pegawai
 
 
 Hasil:
+
 
 ![](gambar/1.png)
 
@@ -185,7 +199,7 @@ hasil:
 
 
 
-analisis:
+*analisis:
 - `SELECT`= untuk memilih kolom mana saja yang ingin dihitung atau ditampilkan.
 - `NoCab`= merupakan nama kolom yang ingin ditampilkan.
 - `COUNT(NIP)`= untuk menghitung jumlah barisan data yang mempunyai isi data dari kolom yang dipilih, NIP adalah nama kolom yang dipilih unutk dihitung
